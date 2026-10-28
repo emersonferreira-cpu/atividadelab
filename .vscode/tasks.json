@@ -2,14 +2,22 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc arquivo de build ativo",
+            "label": "C/C++: gcc build raylib",
             "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${fileDirname}/atividade9.c",
+                "${fileDirname}/inventario.c",
+                "${fileDirname}/entidade.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/atividade9",
+                "-lraylib",
+                "-lm",
+                "-lpthread",
+                "-ldl",
+                "-lrt",
+                "-lX11"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -21,7 +29,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Tarefa gerada pelo Depurador."
+            "detail": "Tarefa de compilação para o projeto com Raylib."
         }
     ],
     "version": "2.0.0"
